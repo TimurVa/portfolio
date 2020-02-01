@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #arrowTop {
+      height: 30px;
+      width: 70px;
+      color: white;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      position: fixed;
+      background-color:rgba(0, 0, 0, 0.2);
+      padding: 3px;
+    }
+
+    #arrowTop::before {
+      content: 'Scroll Up';
+    }
+  
+
+    .clear {
+        clear: both
+    }
+
+    a {
+        color: black;
+    }
+
+    nav {
+       background: #FFFF99;
+       padding: 1rem;
+    }
+
+    nav h1 {
+        float: left;
+    }
+
+    nav ul {
+        float: right;
+        list-style: none;
+    }
+
+    nav li {
+        float: left;
+        margin: 0rem 5rem;
+    }
+
+    .about {
+        background-image: url("laptop-and-coffee-3184464.jpg");
+        height: 43rem;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+        padding-top: 3rem;
+        text-shadow: 3px 2px 4px black;
+        margin-bottom: 2rem;;
+    }
+
+    .aboutme {
+        padding-top: 8rem;;
+    }
+
+    #calc {
+        margin: auto;
+        width: 40%;
+        padding: 1rem;
+        border-style: solid;
+        border-color: #7FDBFF;
+        border-radius: 20px;
+        
+    }
+
+    .contact {
+        text-align: center;
+    }
+
+    .input-group {
+        width: 300px;
+        margin: auto;
+        padding-top: 1rem;
+    }
+   
+
+    form label, form textarea {
+        display: block;
+        margin: auto;
+    }
+
+    #cont {
+        padding: 1rem;
+        text-align: center;
+        background: white;
+    }
+    
+   
+
+</style>
+
+</head>
+<body>
+  <div id='arrowTop' hidden></div>
+    
+    <header>
+     
+        <div oncopy='return false'>
+        <nav>
+            <h1 id="portfolio">Portfolio</h1>
+            <ul>
+                <li><a href="#me">About me</a></li>
+                <li><a href="#cont">Contact</a></li>
+            </ul>
+            <div class="clear"></div>
+        </nav>
+    </div>
+    </header>
+    <section class="about" id="me">
+      
+        <header>
+        <div oncopy="alert('Sorry but u can`t copy'); return false">
+        <h2>Who is me?</h2>
+        <h3 class="aboutme">I'm 23 y.o. student of <a href="http://ugatu.su" target="_blank">
+            USATU</a> and I love to code.<br>Right now I'm focused on improving my JS skills<br> 
+            and also I'm looking for any job expirience on <br>Front-end and Back-end part. 
+            This page was made<br> by me on top of <a href="https://getbootstrap.com" target="_blank">
+            Bootstrap</a></h3>
+        </div>
+        </header>
+    </section>
+<div id="calc">
+    <p>Депозитный калькулятор</p>
+
+  <form name="calculator">
+    <table>
+      <tr>
+        <td>Первоначальный депозит</td>
+        <td>
+          <input name="money" type="number" value="10000" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Срок вклада?</td>
+        <td>
+          <select name="months">
+            <option value="3">3 (минимум)</option>
+            <option value="6">6 (полгода)</option>
+            <option value="12" selected>12 (год)</option>
+            <option value="18">18 (1.5 года)</option>
+            <option value="24">24 (2 года)</option>
+            <option value="30">30 (2.5 года)</option>
+            <option value="36">36 (3 года)</option>
+            <option value="60">60 (5 лет)</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Годовая процентная ставка?</td>
+        <td>
+          <input name="interest" type="number" value="5" required>
+        </td>
+      </tr>
+    </table>
+
+
+  </form>
+
+
+  <table id="diagram">
+    <tr>
+      <th>Было:</th>
+      <th>Станет:</th>
+    </tr>
+    <tr>
+      <th id="money-before"></th>
+      <th id="money-after"></th>
+    </tr>
+    <td>
+      <div style="background:#3D9970;width:40px;height:100px"></div>
+    </td>
+    <td>
+      <div style="background:#39CCCC;width:40px;height:0" id="height-after"></div>
+    </td>
+  </table>
+</div>
+
+    <footer id='cont'>
+    <section>
+        <p class="lead">
+            To send me a message click: <a href="mailto:rolanditower@gmail.com?subject=Заголовок&body=Cообщение">Send</a>
+          </p>
+          <p class="lead">
+           <a href="https://github.com/TimurVa/sampleOfCode">GitHub</a> 
+          </p>
+    </section>
+    </footer>   
+
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+    <script>
+ 
+        let form = document.forms.calculator;
+      
+        function calculate(){
+          let formMoney = form.money.value;
+           // console.log(form.money.value)
+      
+          let formMonth = form.months.value / 12;
+        //console.log(form.months.value)
+      
+          let formInterest = form.interest.value / 100;
+        //console.log(form.interest.value)
+      
+          let final = Math.round(formMoney * (1 + formInterest * formMonth))
+        //console.log(final)
+      
+          let height = final / form.money.value * 100 + 'px';
+      
+        document.getElementById('height-after').style.height = height;
+        document.getElementById('money-before').innerHTML = form.money.value;
+        document.getElementById('money-after').innerText = final;
+        }
+      
+        calculate();
+      
+        form.oninput = function(){ 
+           calculate();
+       }
+      </script>
+
+      <script>
+      arrowTop.onclick = function() {
+      window.scrollTo(0, 0);
+      // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
+    };
+
+    window.addEventListener('scroll', function() {
+      arrowTop.hidden = (pageYOffset < 100);
+    });
+      </script>
+
+</body>
+</html>
