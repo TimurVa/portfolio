@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>About me</title>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -93,35 +93,42 @@
       .aboutme {
         padding-top: 8rem;
       }
-      
-    
-        
-        #calc {
-          margin: auto;
-          width: 40%;
-          padding: 1rem;
-          border-style: solid;
-          border-color: #7fdbff;
-          border-radius: 20px;
-      }
-      
-      input {
-        max-width: 50%;
-        margin: 1em;;
+
+      #calc {
+        margin: auto;
+        width: 30%;
+        padding: 1rem;
+        border-style: solid;
+        border-color: #7fdbff;
+        border-radius: 20px;
       }
 
-      td{
-        font-size: 1.5vw;
+      input {
+        max-width: 50%;
+        margin: 1em;
+      }
+
+      td {
+        font-size: 1vw;
       }
 
       .contact {
         text-align: center;
       }
 
+      .first-table {
+        margin: 0px;
+        text-align: left;
+      }
+
       #cont {
         padding: 1rem;
         text-align: center;
         background: white;
+      }
+
+      #diagram {
+        font-size: 1vw;
       }
     </style>
   </head>
@@ -160,7 +167,7 @@
       <p style="font-size: 2vw;">Депозитный калькулятор</p>
 
       <form name="calculator">
-        <table>
+        <table class="first-table">
           <tr>
             <td>Первоначальный депозит</td>
             <td>
@@ -201,11 +208,11 @@
           <th id="money-after"></th>
         </tr>
         <td>
-          <div style="background:#3D9970;width:40px;height:100px"></div>
+          <div style="background:#3D9970;width:4vw;height:100px"></div>
         </td>
         <td>
           <div
-            style="background:#39CCCC;width:40px;height:0"
+            style="background:#39CCCC;width:4vw;height:0"
             id="height-after"
           ></div>
         </td>
@@ -222,7 +229,9 @@
           >
         </p>
         <p class="lead">
-          <a href="https://github.com/TimurVa/sampleOfCode">GitHub</a>
+          <a href="https://github.com/TimurVa/sampleOfCode" target="_blank"
+            >GitHub</a
+          >
         </p>
       </section>
     </footer>
@@ -266,7 +275,6 @@
     <script>
       arrowTop.onclick = function() {
         window.scrollTo(0, 0);
-        // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
       };
 
       window.addEventListener("scroll", function() {
